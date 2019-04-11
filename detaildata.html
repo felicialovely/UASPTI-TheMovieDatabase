@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html ng-app="movieApp">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <title>Detail Data</title>
+</head>
+
+<body class="bg-dark m-0 p-0" ng-controller="moviedetail">
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark p-0 m-0">
+    <div class="container"> <span class="navbar-brand m-0 p-0" href="#">
+        <i class="fa d-inline fa-lg fa-film"></i>
+        <b class="text-warning">MovieApp by Felicia Lovely</b>
+    </span> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar10">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar10">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item bg-dark"> <a class="nav-link active" href="data.html">Data</a> </li>
+          <li class="nav-item text-warning"> <a class="nav-link" href="aboutme.html">About Me</a> </li>
+        </ul> <a class="btn navbar-btn ml-md-2 text-dark btn-warning" href="login.html">Logout</a>
+      </div>
+    </div>
+  </nav>
+  <div class="" style="	background-image: url(&quot;images/black.jpg&quot;);	background-size: cover;	background-position: top left;	background-repeat: no repeat;">
+    <div class="">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="display-4 text-warning mt-5" style="	text-shadow: 2px 2px 15px yellow;">{{ movie.title }}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12"><img class="img-fluid d-block" src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" width="50%" height="30%"></div>
+        </div>
+      </div>
+    </div>
+    <div class="">
+      <div class="container pb-5">
+        <div class="row">
+          <div class="col-md-12 border border-warning" style="	box-shadow: 0px 0px 30px 1px gold; border-top-left-radius: 10px;	border-top-right-radius: 10px;	border-bottom-left-radius: 10px;	border-bottom-right-radius: 10px;">
+            <h2 class="text-warning">Overview :</h2>
+            <h5 class="text-white">{{ movie.overview }}</h5>
+            <h2 class="text-warning">Release Date :</h2>
+            <h5 class="text-white">{{ movie.release_date }}</h5>
+            <h2 class="text-warning">Budget :</h2>
+            <h5 class="text-white">{{ movie.budget }}</h5>
+            <h2 class="text-warning">Production Companies :</h2>
+            <h5 class="text-white">{{ production_companies }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <script type="text/javascript" src="script.js"></script> -->
+  <script src="key.js"></script>
+  <script src="angular.min.js"></script>
+  <script src="angular-route.min.js"></script>
+  <script src="app.js"></script>
+  <script src="detaildata.js"></script>
+  </body>
+
+</html>

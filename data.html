@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ng-app="movieApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Data</title>
+</head>
+
+<body class="bg-dark m-0 p-0">
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark p-0 m-0">
+    <div class="container"> <span class="navbar-brand m-0 p-0">
+        <i class="fa d-inline fa-lg fa-film"></i>
+        <b class="text-warning">MovieApp by Felicia Lovely</b>
+    </span> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar10">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar10">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item bg-dark"> <a class="nav-link active" href="data.html">Data</a> </li>
+          <li class="nav-item text-warning"> <a class="nav-link" href="aboutme.html">About Me</a> </li>
+        </ul> <a class="btn navbar-btn ml-md-2 text-dark btn-warning" href="login.html">Logout</a>
+      </div>
+    </div>
+  </nav>
+  <div class="" style="	background-image: url(&quot;images/black.jpg&quot;);	background-size: cover;	background-position: center;	background-repeat: no repeat;">
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="text-warning display-4" style="	text-shadow: 2px 2px 15px yellow;">NOW PLAYING</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5">
+    <div class="container" ng-controller="movie">
+      <div class="card-deck mb-3" ng-repeat="mvs in movies">
+        <div class="card pt-3 border border-warning" ng-repeat="mv in mvs" style="	box-shadow: 0px 0px 10px 1px gold; border-top-left-radius: 10px;	border-top-right-radius: 10px;	border-bottom-left-radius: 10px;	border-bottom-right-radius: 10px;">
+          <div class="text-center" style="min-height:80px;"><h4>{{ mv.title }}</h4></div>
+          <div class="card-body">
+            <img class="card-img-top mb-3" src="https://image.tmdb.org/t/p/w500{{mv.poster_path}}" alt="Card image cap">
+            <p>Release Date : {{ mv.release_date }}</p>
+            <form action="detaildata.html">
+              <input type="hidden" name="id" value="{{ mv.id }}">
+              <button class="btn btn-warning btn-block" type="submit">Detail</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script type="text/javascript" src="script.js"></script>
+  <script src="key.js"></script>
+  <script src="angular.min.js"></script>
+  <script src="angular-route.min.js"></script>
+  <script src="app.js"></script>
+  <script src="data.js"></script>
+  <script src="detaildata.js"></script>
+</body>
+
+</html>
